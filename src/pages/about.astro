@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SplitText from '../components/SplitText';
+---
+
+<BaseLayout 
+  title="About — Zasher" 
+  description="The story behind Zasher."
+>
+  <header class="hero page-hero">
+    <div class="wrap" style="grid-template-columns: 1fr;">
+      <div class="hero-content">
+
+        <h1>
+          <SplitText client:load text="Built for focus." tag="span" />
+        </h1>
+      </div>
+    </div>
+  </header>
+
+  <section class="section page-content">
+    <div class="wrap reveal-on-scroll">
+      <div style="max-width: 640px; margin: 0 auto;">
+        <h2 style="margin-bottom: 24px;">The Founder's Note</h2>
+        
+        <p>Zasher is designed and built by a solo developer. A few months ago, I realized that the software I was using every day was getting too noisy. Every app wanted to be a social network, every tool wanted to send me five push notifications a day.</p>
+        <p>I just wanted small, quiet tools for the parts of my life that were easy to neglect—my mind, my time, and my money. I didn't want a bloated "all-in-one suite." I wanted a few good tools that did exactly one thing well, and nothing else.</p>
+        <p style="margin-bottom: 40px;">That's why Zasher exists. It's not a single massive product. It's a collection of focused apps built under one roof, designed to bring out the best in you, and then get out of your way.</p>
+
+        <div style="margin-top: 40px; margin-bottom: 40px;">
+          <p style="color: var(--text-main); margin-bottom: 8px;">
+            — <strong>Varun</strong>
+          </p>
+          <a href="https://www.linkedin.com/in/varunvallamkonda/" target="_blank" style="color: var(--sage); text-decoration: underline; font-size: 14px;">
+            Connect on LinkedIn
+          </a>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid var(--line); margin-bottom: 40px;" />
+
+        <h2 style="margin-bottom: 24px;">Who We Are</h2>
+        <p>There is no board of directors or massive corporate team behind this. It's just one person, building tools for people who care about intentionality. This means development might take a little longer sometimes, but it also means the products will never be ruined by misaligned incentives.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

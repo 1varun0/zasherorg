@@ -1,0 +1,35 @@
+---
+import type { Product } from '../data/products';
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+const isLive = product.status === 'live';
+const Tag = isLive ? 'a' : 'div';
+const hrefAttr = isLive ? { href: product.href } : {};
+---
+
+<Tag 
+  class={`accordion-panel reveal-on-scroll ${!isLive ? 'soon' : ''}`}
+  {...hrefAttr}
+  style={`--accent-color: var(--${product.accentColor});`}
+>
+  <div class="panel-title">
+    <div class="panel-icon" set:html={product.svgIcon}></div>
+    <h3>{product.name}</h3>
+  </div>
+  
+  <div class="panel-desc">
+    {product.description}
+  </div>
+
+  <div class="panel-meta">
+    <span class="status">{isLive ? 'Live' : 'In Development'}</span>
+    <span class="tag">{product.tag}</span>
+    {isLive && (
+      <div class="cta-arrow">→</div>
+    )}
+  </div>
+</Tag>

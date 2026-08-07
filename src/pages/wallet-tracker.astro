@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WaitlistForm from '../components/WaitlistForm';
+import { products } from '../data/products';
+const product = products.find(p => p.id === 'wallet-tracker');
+---
+
+<BaseLayout 
+  title="Wallet Tracker — Zasher" 
+  description={product?.description || ''}
+>
+  <header class="hero" style={`--accent: var(--slate); padding-bottom: 60px; border-bottom: none;`}>
+    <div class="wrap">
+
+
+      <h1>
+        <span class="anim-hero-line" style="display:inline-block;">{product?.name}</span>
+      </h1>
+      <p class="hero-sub anim-hero-sub">{product?.description}</p>
+      
+      <div class="anim-hero-meta" style="margin-top: 48px;">
+        <WaitlistForm client:load />
+      </div>
+    </div>
+  </header>
+</BaseLayout>

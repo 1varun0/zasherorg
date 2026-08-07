@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroVisual from '../components/HeroVisual.astro';
+import SplitText from '../components/SplitText';
+import TextType from '../components/TextType';
+import DecryptedText from '../components/DecryptedText';
+import FlowingProductItem from '../components/FlowingProductItem';
+import { products } from '../data/products';
+---
+
+<BaseLayout 
+  title="Zasher — Bring out the best in you" 
+  description="We build small, focused tools for the parts of life that are easy to neglect."
+>
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-content">
+
+        <h1 style="display: flex; flex-direction: column;">
+          <span><SplitText client:load text="Bring out" tag="span" /></span>
+          <span><SplitText client:load text="the best" tag="span" delay={100} /></span>
+          <span style="color: var(--sage);"><SplitText client:load text="in you." tag="span" delay={200} /></span>
+        </h1>
+        <p class="hero-sub anim-hero-sub">
+          <TextType 
+            client:load
+            as="span"
+            text="Small, focused tools for your mind, your time, and your money. Each one stands on its own. Together, they're Zasher."
+            typingSpeed={20}
+            loop={false}
+            showCursor={true}
+          />
+        </p>
+        <div class="hero-meta anim-hero-meta">
+          <div><strong><span class="stat-counter" data-target="2">00</span></strong><DecryptedText client:load text="products live" animateOn="view" /></div>
+          <div><strong><span class="stat-counter" data-target="1">00</span></strong><DecryptedText client:load text="in the works" animateOn="view" /></div>
+          <div><strong>2026</strong><DecryptedText client:load text="building in the open" animateOn="view" /></div>
+        </div>
+      </div>
+      <HeroVisual />
+    </div>
+  </header>
+
+  <section class="products" id="products">
+    <div class="wrap">
+      <div class="section-head reveal-on-scroll">
+        <h2>The product line</h2>
+        <p>Every Zasher product solves one problem well, then gets out of your way.</p>
+      </div>
+    </div>
+    <div class="accordion-list">
+      {products.map(product => (
+        <FlowingProductItem client:load product={product} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

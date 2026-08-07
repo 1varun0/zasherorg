@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SplitText from '../components/SplitText';
+---
+
+<BaseLayout 
+  title="Privacy Policy — Zasher" 
+  description="How we handle your data on the Zasher hub."
+>
+  <header class="hero page-hero">
+    <div class="wrap" style="grid-template-columns: 1fr;">
+      <div class="hero-content">
+
+        <h1>
+          <SplitText client:load text="Privacy Policy" tag="span" />
+        </h1>
+      </div>
+    </div>
+  </header>
+
+  <section class="section page-content">
+    <div class="wrap reveal-on-scroll">
+      <div style="max-width: 640px; margin: 0 auto;">
+        
+        <p><strong>Effective Date: July 2026</strong></p>
+
+        <p>
+          This Privacy Policy applies to the Zasher hub website (zasher.org). Please note that each individual Zasher product has its own separate privacy policy tailored to how it works.
+        </p>
+
+        <h3 style="margin-top: 40px; margin-bottom: 16px;">1. What we collect</h3>
+        <p>
+          On the main Zasher hub, we collect almost nothing. There are no tracking pixels, no third-party analytics scripts, and no advertising cookies. If you contact us via email or LinkedIn, we will have whatever information you voluntarily provide in your message.
+        </p>
+
+        <h3 style="margin-top: 40px; margin-bottom: 16px;">2. How we use your information</h3>
+        <p>
+          If you send a message, we use that information solely to reply to your inquiry. We do not sell, rent, or share your contact information with anyone.
+        </p>
+
+        <h3 style="margin-top: 40px; margin-bottom: 16px;">3. Third-party links</h3>
+        <p>
+          This site contains links to individual Zasher products (like Mindjournal or Productivity). Those products have their own websites and their own privacy policies. We encourage you to read them before signing up.
+        </p>
+
+        <h3 style="margin-top: 40px; margin-bottom: 16px;">4. Changes to this policy</h3>
+        <p>
+          We may update this policy from time to time. If we do, we will update the "Effective Date" at the top of this page.
+        </p>
+
+        <h3 style="margin-top: 40px; margin-bottom: 16px;">5. Contact</h3>
+        <p>
+          If you have any questions about this Privacy Policy, please reach out via our <a href="/contact" style="color: var(--text-main); text-decoration: underline;">Contact page</a>.
+        </p>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>

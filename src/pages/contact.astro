@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SplitText from '../components/SplitText';
+import MagneticButton from '../components/MagneticButton';
+---
+
+<BaseLayout 
+  title="Contact — Zasher" 
+  description="Get in touch with Zasher."
+>
+  <header class="hero page-hero">
+    <div class="wrap" style="grid-template-columns: 1fr;">
+      <div class="hero-content">
+
+        <h1>
+          <SplitText client:load text="Say hello." tag="span" />
+        </h1>
+      </div>
+    </div>
+  </header>
+
+  <section class="section page-content">
+    <div class="wrap reveal-on-scroll">
+      <div style="max-width: 640px; margin: 0 auto;">
+        
+        <p style="margin-bottom: 40px;">
+          Whether you have feedback on a product, need support, or just want to say hi, you can reach out to me directly on LinkedIn. Since I'm a solo developer, I might take a day or two to reply, but I read every single message.
+        </p>
+
+        <MagneticButton client:load strength={0.3}>
+          <a href="https://www.linkedin.com/in/varunvallamkonda/" target="_blank" class="btn">
+            MESSAGE ON LINKEDIN
+          </a>
+        </MagneticButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

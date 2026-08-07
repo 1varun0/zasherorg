@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Page Not Found — Zasher" 
+  description="The page you are looking for does not exist."
+>
+  <header class="hero" style="border-bottom: none; text-align: center; padding-top: 180px; padding-bottom: 180px;">
+    <div class="wrap">
+
+
+      <h1 style="margin: 0 auto;">
+        <span class="anim-hero-line" style="display:inline-block;">Nothing here.</span>
+      </h1>
+      <p class="hero-sub anim-hero-sub" style="margin-left: auto; margin-right: auto;">The page you are looking for has been moved or doesn't exist.</p>
+      
+      <div class="anim-hero-meta" style="justify-content: center;">
+        <a href="/" style="display:inline-block; border: 1px solid var(--line); color:var(--parchment); padding:12px 24px; border-radius:4px; font-weight:500; transition: background 0.2s; cursor: pointer;" onmouseover="this.style.background='var(--ink-2)'" onmouseout="this.style.background='transparent'">Return Home</a>
+      </div>
+    </div>
+  </header>
+</BaseLayout>

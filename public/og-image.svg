@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#12141C" />
+  <rect x="100" y="100" width="1000" height="430" rx="16" fill="#1A1D28" stroke="rgba(237,233,221,0.12)" stroke-width="2" />
+  <text x="180" y="280" font-family="serif" font-weight="600" font-size="100" fill="#EDE9DD">zasher<tspan fill="#8FAE8B">.</tspan></text>
+  <text x="180" y="380" font-family="sans-serif" font-weight="400" font-size="40" fill="#9DA0AC">Bring out the best in you.</text>
+  <rect x="180" y="460" width="80" height="80" rx="8" fill="rgba(143,174,139,0.14)" />
+  <rect x="280" y="460" width="80" height="80" rx="8" fill="rgba(214,162,76,0.14)" />
+  <rect x="380" y="460" width="80" height="80" rx="8" fill="rgba(124,147,184,0.14)" />
+</svg>

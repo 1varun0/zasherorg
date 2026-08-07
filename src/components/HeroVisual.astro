@@ -1,0 +1,83 @@
+---
+// HeroVisual.astro
+// A subtle, atmospheric rotating wireframe mesh
+---
+<div class="hero-visual reveal-on-scroll" aria-hidden="true">
+  <div class="mesh-container">
+    <div class="float-wrapper">
+      <svg viewBox="0 0 200 200" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.5" xmlns="http://www.w3.org/2000/svg" class="wireframe">
+        <circle cx="100" cy="100" r="90" />
+        <ellipse cx="100" cy="100" rx="90" ry="30" />
+        <ellipse cx="100" cy="100" rx="90" ry="60" />
+        <ellipse cx="100" cy="100" rx="30" ry="90" />
+        <ellipse cx="100" cy="100" rx="60" ry="90" />
+        <path d="M 10 100 L 190 100" />
+        <path d="M 100 10 L 100 190" />
+        
+        <!-- A few angled lines to make it feel more structural/architectural -->
+        <path d="M 36 36 L 164 164" stroke-dasharray="2 4" />
+        <path d="M 164 36 L 36 164" stroke-dasharray="2 4" />
+      </svg>
+    </div>
+    <div class="mesh-glow"></div>
+  </div>
+</div>
+
+<style>
+  .hero-visual {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .mesh-container {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    aspect-ratio: 1;
+  }
+  .float-wrapper {
+    width: 100%;
+    height: 100%;
+    animation: floatMesh 6s ease-in-out infinite;
+    position: relative;
+    z-index: 2;
+    transition: scale 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .mesh-container:hover .float-wrapper {
+    scale: 1.05;
+  }
+  .wireframe {
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    animation: spinMesh 15s linear infinite;
+    animation-play-state: paused;
+  }
+  .mesh-container:hover .wireframe {
+    animation-play-state: running;
+  }
+  .mesh-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 70%; height: 70%;
+    translate: -50% -50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+    filter: blur(30px);
+    z-index: 1;
+    transition: all 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .mesh-container:hover .mesh-glow {
+    background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+    scale: 1.1;
+  }
+  
+  @keyframes floatMesh {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -8px; }
+  }
+  @keyframes spinMesh {
+    0% { rotate: 0deg; }
+    100% { rotate: 360deg; }
+  }
+</style>
